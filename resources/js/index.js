@@ -3,9 +3,57 @@ const nameInput = document.getElementById("my-name-input");
 const myMessage = document.getElementById("my-message");
 const sendButton = document.getElementById("send-button");
 const chatBox = document.getElementById("chat");
+const saveNameButton = document.getElementById("save-name-button");
+const changeNameButton = document.getElementById("change-name-button");
 
 // Server URL
 const serverURL = `https://it3049c-chat.fly.dev/messages`;
+
+// Function to check and set the name from localStorage
+function initializeName() {
+    const savedName = localStorage.getItem("username");
+
+    if (savedName) {
+        nameInput.value = savedName;
+        myMessage.disabled = false; // Enable input if name exists
+        sendButton.disabled = false; // Enable Send button if name exists
+    } else {
+        myMessage.disabled = true; // Disable input if no name
+        sendButton.disabled = true; // Disable Send button if no name
+    }
+}
+
+// Event listener for the Save Name button
+saveNameButton.addEventListener("click", function () {
+    const name = nameInput.value.trim();
+    
+    if (name !== "") {
+        localStorage.setItem("username", name);
+        myMessage.disabled = false; // Enable message input
+        sendButton.disabled = false; // Enable Send button
+        alert("Username saved!"); // Confirmation message
+    } else {
+        alert("Please enter a name before saving.");
+    }
+});
+
+// Event listener for the Change Name button
+changeNameButton.addEventListener("click", function () {
+    const newName = prompt("Enter a new username:");
+
+    if (newName && newName.trim() !== "") {
+        localStorage.setItem("username", newName.trim());
+        nameInput.value = newName.trim(); // Update the input field with the new name
+        myMessage.disabled = false; // Enable message input
+        sendButton.disabled = false; // Enable Send button
+        alert("Username updated!");
+    } else {
+        alert("Please enter a valid name.");
+    }
+});
+
+// Call function on page load
+initializeName();
 
 // Function to fetch messages from the server
 function fetchMessages() {
