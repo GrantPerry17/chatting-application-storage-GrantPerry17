@@ -16,15 +16,15 @@ Instructions to this assignment can be found [here](https://reedws.github.io/IT3
 
 how many points out of 20 do you deserve on this assignment: 
 
-I deserve 20/20 points because I followed the instructions and passed all tests.
+I deserve 20/20 points because I followed the instructions and they still pass all tests with adding these buttons + changes.
 
 ## Self-Reflection:
 <!-- Write your self-reflection under this line -->
 
-This assignment helped me improve my skills in working with APIs and handling real-time updates with JavaScript. I learned how to fetch and display messages dynamically, manage asynchronous functions, and handle user input. One challenge was ensuring messages were correctly formatted based on the sender, which improved my ability to manipulate the DOM and manage dynamic content.
+This assignment helped me improve my skills in handling user input and localStorage. I learned how to enable/disable the message input based on whether the user has saved their name. Implementing the save and change name functionality enhanced my understanding of data persistence across page reloads. A challenge was ensuring the "Change Name" button updated the input and localStorage correctly, which improved my ability to manage dynamic user interactions.
 
 ### How long it took me to finish this?
-About an hour to complete.
+About an hour or so to complete.
 
 ## Discussion Questions:
 1. What does the bootstrap `display-4` class do?
